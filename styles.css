@@ -1,3 +1,141 @@
 /* Mike Jenkins */
 /* 07 MAY 20XX */
 /* Web Design Challenge */
+
+body {
+    display: grid;
+    grid-template-areas:
+    "header      header       header" 
+    "content1    content1     content2"
+    "content1    content1     aside"
+    "footer      footer       footer";
+    gap: 10px;
+    background-color: rgb(230, 162, 255);
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr auto auto auto;
+}
+
+
+
+
+header {
+    grid-area: header;
+    background-image: url(AH.jpg);
+    background-repeat: round ;
+    height: 300px;
+    padding: 10px;
+    color: rgb(248, 232, 255);
+    border-radius: 15px;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+main {
+    grid-area: content1;
+    background-color: rgb(78, 13, 121);
+    height: 500px;
+    padding-left: 30px;
+    color: rgb(239, 213, 251);
+    border-radius: 15px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding-top: 30px;
+    padding-right: 30px;
+}
+
+div {
+    grid-area: content2;
+    background-color: rgb(101, 57, 120);
+    padding-left: 40px;
+    padding-right: 40px;
+    color: rgb(239, 213, 251);
+    border-radius: 15px;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+div img {
+    height: 200px;
+    width: 400px;
+    size: cover;
+    
+}
+
+aside {
+    grid-area: aside;
+    background-color: rgb(142, 42, 165);
+    color: rgb(239, 213, 251);
+    border-radius: 15px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding-left: 30px;
+}
+
+
+footer {
+    grid-area: footer;
+    background-color: rgb(158, 9, 227);
+    height: 40px;
+    text-align: center;
+    padding-top: 20px;
+    border-radius: 15px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: rgb(239, 213, 251);
+}
+
+
+@media (width < 560px) {
+    body {
+        grid-template-areas: 
+        "header"
+        "content1"
+        "content2"
+        "aside"
+        "footer";
+        grid-template-columns: auto;
+        grid-template-rows: repeat(5, auto);
+    }
+
+    header {
+        width: 449px;
+        height: 200px;
+        background-size: cover;  
+        background-repeat: no-repeat;  
+    }
+
+    main {
+        width: 409px;
+        height: 330px;
+        grid-area: content1;
+        padding-top: 10px;
+        
+    }
+
+    aside {
+        width: 459px;
+        grid-area: aside;
+        padding-bottom: 30px;
+        padding-left: 20px;
+
+    }
+
+    div {
+        width: 389px;
+        grid-area: content2;
+        text-align: center;
+        padding-bottom: 10px;
+        font-size: small;
+    }
+    div h2 {
+        font-size: medium;
+    }
+
+    div img {
+        height: 200px;
+        width: 350;
+
+    }
+
+    footer {
+        width: 469px;
+    }
+}
+
